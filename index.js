@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const fs = require('fs');
 
 const index = path.join(__dirname, 'client/build/index.html')
-const port = process.env.NODE_ENV || '8080';
+const port = process.env.NODE_ENV || '8081';
 const multer = require('multer');
 
 

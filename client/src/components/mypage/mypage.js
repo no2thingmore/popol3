@@ -130,13 +130,15 @@ function Mypage() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className={menu === "방 등록하기" ? "active" : "noactive"}
-                    onClick={() => MenuClick("방 등록하기")}
-                  >
+                  {
+                    getCookie("user_Code") == 0 ? 
+                    <div></div>
+                    : 
+                    <a href="#"className={menu === "방 등록하기" ? "active" : "noactive"}onClick={() => MenuClick("방 등록하기")}>
                     방 등록하기
                   </a>
+                  }
+                  
                 </li>
               </ul>
             </nav>
@@ -179,12 +181,13 @@ function Mypage() {
               <Myreview reviewData={reviewData} />
             </div>
           )}
-
+          
           {menu === "방 등록하기" && (
             <div className={"start " + end}>
               <Registration />
             </div>
           )}
+          
         </div>
       </div>
     </div>

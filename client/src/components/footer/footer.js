@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./footer.css";
+import { getCookie } from "../../useCookies";
 
 const footer = () => {
+  
   return (
     <div className='footerBox'>
       <div id="footer">
@@ -11,9 +13,13 @@ const footer = () => {
             <li id="li2">이용약관 |</li>
             <li id="li3">개인정보처리방침</li>
             <li id="li4">| 사업자 정보확인 |</li>
-            <li>
-              <Link to="/admin" id="li5">관리자 페이지</Link>
-            </li>
+            {getCookie("user_Code") == 2 ? 
+              <li>
+                <Link to="/admin" id="li5">관리자 페이지</Link>
+              </li>
+              : 
+              <div></div>
+            }
           </ul>
           <br/>
           <br/>
