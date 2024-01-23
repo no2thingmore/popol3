@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const fs = require('fs');
 
 const index = path.join(__dirname, 'client/build/index.html')
-const port = process.env.NODE_ENV || '8081';
+const port = process.env.NODE_ENV || '8080';
 const multer = require('multer');
 
 
@@ -59,7 +59,7 @@ app.post('/image', upload.single('image'), (req, res)=>{
   const file = req.file; 
   console.log("post(/image) file:",file);
   res.send({ 
-      imageUrl: "http://localhost:8080/"+file.destination+file.filename //이미지 여기 저장했다 json형식으로 보냄
+      imageUrl: "http://52.79.108.218:8080/"+file.destination+file.filename //이미지 여기 저장했다 json형식으로 보냄
   })
 })
 

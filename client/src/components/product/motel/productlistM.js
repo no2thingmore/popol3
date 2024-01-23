@@ -13,11 +13,14 @@ function ProductListM(props) {
         await axios
           .get(`${API_URL}/lodging`, { params: { type: 0 } })
           .then((result) => {
+            console.log('성공');
             const items = result.data;
+            console.log(items);
             setProductbasedata(items);
           })
           .catch((e) => {
             console.log(e);
+            console.log('실패');
           });
       };
       getList();

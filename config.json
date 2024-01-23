@@ -2,7 +2,7 @@
   "development": {
     "username": "GyeongIk",
     "password": "GyIk@619",
-    "database": "innout",
+    "database": "hellokiticket",
     "host": "52.79.108.218",
     "dialect": "mysql"
   },
